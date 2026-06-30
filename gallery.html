@@ -1,132 +1,307 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Umar Bashir Usman - Achievements</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certifications - Muhammad Abdulsalam Mikail</title>
 
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-  }
+  <style>
+    /* ── Reset ── */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  header {
-    background-color: #1b3a57;
-    padding: 20px;
-    text-align: center;
-  }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
 
-  header h1 {
-    color: white;
-    margin: 0;
-  }
+    /* ── Header (matches index) ── */
+    header {
+      background-color: #1b3a57;
+      padding: 20px;
+      text-align: center;
+    }
 
-  nav {
-    background-color: #16314a;
-    text-align: center;
-    padding: 10px;
-  }
+    header h1 {
+      color: white;
+      margin: 0;
+    }
 
-  nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 16px;
-  }
+    /* ── Navigation (matches index) ── */
+    nav {
+      background-color: #16314a;
+      text-align: center;
+      padding: 10px;
+    }
 
-  nav a:hover {
-    text-decoration: underline;
-  }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 16px;
+    }
 
-  .section {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 30px;
-  }
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-  .section h2 {
-    color: #1b3a57;
-    text-align: center;
-  }
+    nav a.active {
+      text-decoration: underline;
+      font-weight: bold;
+    }
 
-  .achievement {
-    background-color: white;
-    padding: 20px;
-    border-left: 5px solid #1b3a57;
-    margin-bottom: 20px;
-    border-radius: 8px;
-  }
+    /* ── Page Hero ── */
+    .hero {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
 
-  .achievement h3 {
-    color: #1b3a57;
-    margin-top: 0;
-  }
+    .hero h1 {
+      color: #1b3a57;
+      margin-bottom: 10px;
+    }
 
-  footer {
-    background-color: #1b3a57;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 40px;
-  }
-</style>
+    .hero p {
+      font-size: 16px;
+      color: #555;
+    }
 
+    /* ── Divider ── */
+    .divider {
+      width: 60px;
+      height: 4px;
+      background-color: #1b3a57;
+      margin: 15px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ── Container ── */
+    .container {
+      width: 80%;
+      margin: auto;
+      padding: 20px 20px 40px;
+    }
+
+    /* ── Cert Card ── */
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    /* Card top row: title + badge */
+    .cert-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .cert-meta h2 {
+      color: #1b3a57;
+      font-size: 1.2rem;
+    }
+
+    .cert-meta .issuer {
+      font-size: 14px;
+      color: #777;
+      margin-top: 4px;
+    }
+
+    .cert-meta .issuer span {
+      color: #1b3a57;
+      font-weight: bold;
+    }
+
+    /* Verified badge */
+    .cert-badge {
+      background-color: #e8f0fe;
+      border: 1px solid #1b3a57;
+      color: #1b3a57;
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    /* Certificate image placeholder */
+    .cert-image-wrapper {
+      background-color: #f5f5f5;
+      border: 2px dashed #ccc;
+      border-radius: 8px;
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: #999;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .cert-image-wrapper .icon {
+      font-size: 2.5rem;
+    }
+
+    /* Description text */
+    .cert-description {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    /* Topics covered */
+    .topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .topic-tag {
+      background-color: #e8f0fe;
+      border: 1px solid #b3ccff;
+      color: #1b3a57;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    /* View certificate button (matches index .button) */
+    .cert-link {
+      display: inline-block;
+      background-color: #1b3a57;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+
+    .cert-link:hover {
+      background-color: #16314a;
+    }
+
+    /* Coming Soon card */
+    .card-coming-soon {
+      opacity: 0.55;
+      border: 2px dashed #ccc;
+    }
+
+    /* ── Footer (matches index) ── */
+    footer {
+      background-color: #1b3a57;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>Umar Bashir Usman</h1>
-</header>
+  <!-- Header -->
+  <header>
+    <h1>Umar Bashir Usman</h1>
+  </header>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="skills.html">Skills</a>
-  <a href="education.html">Education</a>
-  <a href="project1.html">Project 1</a>
-  <a href="project2.html">Project 2</a>
-  <a href="project3.html">Project 3</a>
-  <a href="gallery.html">Achievements</a>
-  <a href="resume.html">Resume</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="education.html">Education</a>
+    <a href="project1.html">Project 1</a>
+    <a href="project2.html">Project 2</a>
+    <a href="project3.html">Project 3</a>
+    <a href="gallery.html">Achievements</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+    <a href="certificate.html" class="active">Certificate</a>
+  </nav>
 
-<div class="section">
-
-  <h2>Achievements</h2>
-
-  <div class="achievement">
-    <h3>Software Engineering Student</h3>
-    <p>
-      Currently studying Software Engineering at Northwest University, Kano.
-    </p>
+  <!-- Page Hero -->
+  <div class="hero">
+    <h1>My Certifications</h1>
+    <p>Verified credentials earned through freeCodeCamp's project-based curriculum.</p>
+    <div class="divider"></div>
   </div>
 
-  <div class="achievement">
-    <h3>Learning Web Development</h3>
-    <p>
-      Completed several HTML and CSS lessons through FreeCodeCamp.
-    </p>
+  <!-- Content -->
+  <div class="container">
+
+    <!-- ── Certification 1 ── -->
+    <div class="card">
+      <div class="cert-meta">
+        <div>
+          <h2>Responsive Web Design</h2>
+          <p class="issuer">Issued by <span>freeCodeCamp</span> &middot; 2024</p>
+        </div>
+        <span class="cert-badge">&#10003; Verified</span>
+      </div>
+
+      <img src="umar_cert.jpeg"
+                alt="Responsive Web Design Certificate"
+                style="width:100%;border-radius:8px;margin-bottom:18px;" />
+
+      <p class="cert-description">
+        This certification covers building responsive websites using HTML and CSS.
+        It includes 300+ hours of coursework across visual design, accessibility,
+        CSS Flexbox, CSS Grid, and five hands-on certification projects reviewed
+        and verified by freeCodeCamp.
+      </p>
+
+      <div class="topics">
+        <span class="topic-tag">HTML5</span>
+        <span class="topic-tag">CSS3</span>
+        <span class="topic-tag">Flexbox</span>
+        <span class="topic-tag">CSS Grid</span>
+        <span class="topic-tag">Accessibility</span>
+        <span class="topic-tag">Responsive Design</span>
+        <span class="topic-tag">Visual Design</span>
+      </div>
+
+      <a href="https://www.freecodecamp.org/certification/umarbashir8089/responsive-web-design" target="_blank" class="cert-link">
+        &#128279; View Certificate on freeCodeCamp
+      </a>
+    </div>
+
+    <!-- ── Coming Soon ── -->
+    <div class="card card-coming-soon">
+      <div class="cert-meta">
+        <div>
+          <h2>JavaScript Algorithms &amp; Data Structures</h2>
+          <p class="issuer">Issued by <span>freeCodeCamp</span> &middot; In Progress</p>
+        </div>
+        <span class="cert-badge" style="background:#f5f5f5; border-color:#ccc; color:#999;">
+          Coming Soon
+        </span>
+      </div>
+      <p class="cert-description">
+        Currently working through the JavaScript Algorithms and Data Structures curriculum.
+        This certification will cover variables, loops, functions, arrays, and algorithm scripting.
+      </p>
+    </div>
+
   </div>
 
-  
-
-  <div class="achievement">
-    <h3>Continuous Learning</h3>
-    <p>
-      Passionate about improving programming skills and becoming a professional software engineer.
-    </p>
-  </div>
-
-</div>
-
-<footer>
-  <p>&copy; 2026 Umar Bashir Usman. All Rights Reserved.</p>
-</footer>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Umar Bashir Usman. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
-```
